@@ -50,7 +50,7 @@ export const Results = () => {
     case "/search":
       return (
         <div className="flex flex-wrap justify-between space-y-6 sm:px-56">
-          {webPages?.value?.map(({ url, name, snippet, thumbnailUrl }, index) => (
+          {webPages?.value?.map(({ url, name, snippet }, index) => (
             <div key={index} className="md:w-2/5 w-full">
               <a href={url} target="_blank" rel="noreferrer">
                 <p className="text-sm">
@@ -113,8 +113,8 @@ export const Results = () => {
                 />
                 <p>{description}</p>
                 <p>
-                  {publisher[0].name}
-                  {creator.name}
+                  {console.log(publisher?.[0]?.name)}
+                  {creator?.name}
                   {datePublished}
                 </p>
               </div>
@@ -128,7 +128,7 @@ export const Results = () => {
           {value?.map(
             ({ provider, url, name, description, datePublished }, index) => (
               <div key={index} className="md:w-2/5 w-full">
-                <p>{provider[0].name}</p>
+                <p>{provider?.[0]?.name}</p>
                 <a
                   href={url}
                   target="_blank"

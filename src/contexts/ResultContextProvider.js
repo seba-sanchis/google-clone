@@ -15,7 +15,7 @@ export const ResultContextProvider = ({ children }) => {
       method: "GET",
       headers: {
         'X-BingApis-SDK': 'true',
-        'X-RapidAPI-Key': process.env.API_ACCESS_KEY,
+        'X-RapidAPI-Key': process.env.REACT_APP_API_ACCESS_KEY,
         'X-RapidAPI-Host': host
       },
     });
