@@ -1,28 +1,28 @@
 import React, { createContext, useContext, useState } from "react";
 
 const ResultContext = createContext();
-const baseUrl = "https://google-search72.p.rapidapi.com";
 
 export const ResultContextProvider = ({ children }) => {
   const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("Audi TT RS");
+  const [searchTerm, setSearchTerm] = useState("");
 
-  // /videos, /search, /images
-  const getResults = async (type) => {
+  // /search
+  const getResults = async (host, type) => {
     setIsLoading(true);
 
-    const response = await fetch(`${baseUrl}${type}`, {
+    const response = await fetch(`https://${host}${type}`, {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "e7d6196becmsh285685fc655bedfp17d53ejsn0b947dd94e17",
-        "X-RapidAPI-Host": "google-search72.p.rapidapi.com",
+        'X-BingApis-SDK': 'true',
+        'X-RapidAPI-Key': process.env.API_ACCESS_KEY,
+        'X-RapidAPI-Host': host
       },
     });
 
     const data = await response.json();
 
-    console.log(data)
+    console.log(data);
 
     setResults(data);
     setIsLoading(false);
