@@ -49,14 +49,14 @@ export const Results = () => {
   switch (location.pathname) {
     case "/search":
       return (
-        <div className="flex flex-wrap justify-between space-y-6 sm:px-56">
+        <div className="">
           {webPages?.value?.map(({ url, name, snippet }, index) => (
             <div key={index} className="md:w-2/5 w-full">
               <a href={url} target="_blank" rel="noreferrer">
                 <p className="text-sm">
                   {url.length > 30 ? url.substring(0, 30) : url}
                 </p>
-                <p className="text-lg hover:underline dark:text-blue-300 text-blue-700">
+                <p className="">
                   {name}
                 </p>
                 <p>{snippet}</p>
@@ -67,14 +67,14 @@ export const Results = () => {
       );
     case "/images":
       return (
-        <div className="flex flex-wrap justify-center items-center">
+        <div className="">
           {value?.map(
             (
               { thumbnailUrl, webSearchUrl, hostPageDomainFriendlyName, name },
               index
             ) => (
               <a
-                className="sm:p-3 p-5"
+                className=""
                 href={webSearchUrl}
                 key={index}
                 target="_blank"
@@ -82,7 +82,7 @@ export const Results = () => {
               >
                 <img src={thumbnailUrl} alt={name} loading="lazy" />
                 <p>{hostPageDomainFriendlyName}</p>
-                <p className="w-36 break-words text-sm mt-2">{name}</p>
+                <p className="">{name}</p>
               </a>
             )
           )}
@@ -90,7 +90,7 @@ export const Results = () => {
       );
     case "/videos":
       return (
-        <div className="flex flex-wrap">
+        <div className="">
           {value?.map(
             (
               {
@@ -103,7 +103,7 @@ export const Results = () => {
               },
               index
             ) => (
-              <div key={index} className="p-2">
+              <div key={index} className="">
                 <p>{name}</p>
                 <ReactPlayer
                   url={contentUrl}
@@ -124,23 +124,23 @@ export const Results = () => {
       );
     case "/news":
       return (
-        <div className="flex flex-wrap justify-between space-y-6 sm:px-56 items-center">
+        <div className="">
           {value?.map(
             ({ provider, url, name, description, datePublished }, index) => (
-              <div key={index} className="md:w-2/5 w-full">
+              <div key={index} className="">
                 <p>{provider?.[0]?.name}</p>
                 <a
                   href={url}
                   target="_blank"
                   rel="noreferrer"
-                  className="hover:underline"
+                  className=""
                 >
-                  <p className="text-lg dark:text-blue-300 text-blue-700">
+                  <p className="">
                     {name}
                   </p>
                 </a>
                 <p>{description}</p>
-                <div className="flex gap-4">{datePublished}</div>
+                <div className="">{datePublished}</div>
               </div>
             )
           )}

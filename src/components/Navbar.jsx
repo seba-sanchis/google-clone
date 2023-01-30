@@ -2,25 +2,91 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { Search } from "./Search";
+import { Links } from "./Links";
+
+import logo from "../images/logo.jpg";
 
 export const Navbar = ({ darkTheme, setDarkTheme }) => {
   return (
-    <div className="p-5 pb-0 flex flex-wrap sm:justify-between justify-center items-center border-b dark:border-gray-700 border-gray-200">
-      <div className="flex justify-between items-center space-x-5 w-screen">
-        <Link to="/">
-          <p className="text-2xl bg-blue-500 font-bold text-white py-1 px-2 rounded dark:bg-gray-500 dark:text-gray-900">
-            search-engine
-          </p>
-        </Link>
+    <div className="flex-col border-b-[1px] border-solid border-[#ebebeb]">
+      <div className="flex items-center justify-between mt-[26px]">
+        <div className="flex items-center">
+          <Link to="/">
+            <img className="pr-[28px] pl-[30px]" src={logo} />
+          </Link>
+          <Search />
+        </div>
         <button
           type="button"
           onClick={() => setDarkTheme(!darkTheme)}
-          className="text-xl dark:bg-gray-50 dark:text-gray-900 bg-white border rounded-full px-2 py-1 hover:shadow-lg"
+          className="flex items-center justify-center w-[40px] h-[40px] mr-[20px] rounded-[50%] hover:bg-[rgba(218,220,224,.5)] dark:hover:bg-[#3c4043]"
         >
-          {darkTheme ? "Light" : "Dark"}
+          {darkTheme ? (
+            <svg
+              className="w-[24px] h-[24px]"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <defs>
+                <clipPath id="__lottie_element_2">
+                  <rect className="w-[24px] h-[24px]" x="0" y="0"></rect>
+                </clipPath>
+              </defs>
+              <g clip-path="url(#__lottie_element_2)">
+                <g transform="matrix(1,0,0,1,12,12)">
+                  <g transform="matrix(1,0,0,1,0,0)">
+                    <path
+                      className="fill-[#e8eaed]"
+                      d=" M0,-4 C-2.2100000381469727,-4 -4,-2.2100000381469727 -4,0 C-4,2.2100000381469727 -2.2100000381469727,4 0,4 C2.2100000381469727,4 4,2.2100000381469727 4,0 C4,-2.2100000381469727 2.2100000381469727,-4 0,-4z"
+                    ></path>
+                  </g>
+                </g>
+                <g transform="matrix(1,0,0,1,12,12)">
+                  <g transform="matrix(1,0,0,1,0,0)">
+                    <path
+                      className="fill-[#e8eaed]"
+                      d=" M0,6 C-3.309999942779541,6 -6,3.309999942779541 -6,0 C-6,-3.309999942779541 -3.309999942779541,-6 0,-6 C3.309999942779541,-6 6,-3.309999942779541 6,0 C6,3.309999942779541 3.309999942779541,6 0,6z M8,-3.309999942779541 C8,-3.309999942779541 8,-8 8,-8 C8,-8 3.309999942779541,-8 3.309999942779541,-8 C3.309999942779541,-8 0,-11.3100004196167 0,-11.3100004196167 C0,-11.3100004196167 -3.309999942779541,-8 -3.309999942779541,-8 C-3.309999942779541,-8 -8,-8 -8,-8 C-8,-8 -8,-3.309999942779541 -8,-3.309999942779541 C-8,-3.309999942779541 -11.3100004196167,0 -11.3100004196167,0 C-11.3100004196167,0 -8,3.309999942779541 -8,3.309999942779541 C-8,3.309999942779541 -8,8 -8,8 C-8,8 -3.309999942779541,8 -3.309999942779541,8 C-3.309999942779541,8 0,11.3100004196167 0,11.3100004196167 C0,11.3100004196167 3.309999942779541,8 3.309999942779541,8 C3.309999942779541,8 8,8 8,8 C8,8 8,3.309999942779541 8,3.309999942779541 C8,3.309999942779541 11.3100004196167,0 11.3100004196167,0 C11.3100004196167,0 8,-3.309999942779541 8,-3.309999942779541z"
+                    ></path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          ) : (
+            <svg
+              className="w-[24px] h-[24px]"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <defs>
+                <clipPath id="__lottie_element_2">
+                  <rect className="w-[24px] h-[24px]" x="0" y="0"></rect>
+                </clipPath>
+              </defs>
+              <g clip-path="url(#__lottie_element_2)">
+                <g transform="matrix(1.5,0,0,1.5,7,12)">
+                  <g transform="matrix(1,0,0,1,0,0)">
+                    <path
+                      className="fill-[#5f6368]"
+                      d=" M0,-4 C-2.2100000381469727,-4 -1.2920000553131104,-2.2100000381469727 -1.2920000553131104,0 C-1.2920000553131104,2.2100000381469727 -2.2100000381469727,4 0,4 C2.2100000381469727,4 4,2.2100000381469727 4,0 C4,-2.2100000381469727 2.2100000381469727,-4 0,-4z"
+                    ></path>
+                  </g>
+                </g>
+                <g transform="matrix(-1,0,0,-1,12,12)">
+                  <g transform="matrix(1,0,0,1,0,0)">
+                    <path
+                      className="fill-[#5f6368]"
+                      d=" M0,6 C-3.309999942779541,6 -6,3.309999942779541 -6,0 C-6,-3.309999942779541 -3.309999942779541,-6 0,-6 C3.309999942779541,-6 6,-3.309999942779541 6,0 C6,3.309999942779541 3.309999942779541,6 0,6z M8,-3.309999942779541 C8,-3.309999942779541 8,-8 8,-8 C8,-8 3.309999942779541,-8 3.309999942779541,-8 C3.309999942779541,-8 0,-11.3100004196167 0,-11.3100004196167 C0,-11.3100004196167 -3.309999942779541,-8 -3.309999942779541,-8 C-3.309999942779541,-8 -8,-8 -8,-8 C-8,-8 -8,-3.309999942779541 -8,-3.309999942779541 C-8,-3.309999942779541 -11.3100004196167,0 -11.3100004196167,0 C-11.3100004196167,0 -8,3.309999942779541 -8,3.309999942779541 C-8,3.309999942779541 -8,8 -8,8 C-8,8 -3.309999942779541,8 -3.309999942779541,8 C-3.309999942779541,8 0,11.3100004196167 0,11.3100004196167 C0,11.3100004196167 3.309999942779541,8 3.309999942779541,8 C3.309999942779541,8 8,8 8,8 C8,8 8,3.309999942779541 8,3.309999942779541 C8,3.309999942779541 11.3100004196167,0 11.3100004196167,0 C11.3100004196167,0 8,-3.309999942779541 8,-3.309999942779541z"
+                    ></path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          )}
         </button>
       </div>
-      <Search />
+      <Links />
     </div>
   );
 };
