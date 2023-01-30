@@ -5,7 +5,7 @@ import { Results } from "./Results";
 
 export const Router = () => {
   return (
-    <div className="">
+    <div className="flex grow">
       <Routes>
         <Route path="/" element={<Navigate from="/" to="/search" />} />
         <Route path="/search" element={<Results />} />

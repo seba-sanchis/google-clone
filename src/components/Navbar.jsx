@@ -8,8 +8,8 @@ import logo from "../images/logo.jpg";
 
 export const Navbar = ({ darkTheme, setDarkTheme }) => {
   return (
-    <div className="flex-col border-b-[1px] border-solid border-[#ebebeb]">
-      <div className="flex items-center justify-between mt-[26px]">
+    <div className="flex-col border-b border-solid border-[#ebebeb]">
+      <div className="flex items-center justify-between pt-[26px]">
         <div className="flex items-center">
           <Link to="/">
             <img className="pr-[28px] pl-[30px]" src={logo} />

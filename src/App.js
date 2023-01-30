@@ -9,7 +9,7 @@ const App = () => {
 
   return (
     <div className={darkTheme ? "dark" : ""}>
-      <div className="dark:bg-[#202124] min-h-screen">
+      <div className="flex flex-col dark:bg-[#202124] min-h-screen">
         <Navbar darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
         <Router />
         <Footer />
