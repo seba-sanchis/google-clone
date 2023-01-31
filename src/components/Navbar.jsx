@@ -12,7 +12,7 @@ export const Navbar = ({ darkTheme, setDarkTheme }) => {
       <div className="flex items-center justify-between pt-[26px]">
         <div className="flex items-center">
           <Link to="/">
-            <img className="pr-[28px] pl-[30px] ml-[60px]" src={logo} />
+            <img className="pr-[28px] pl-[30px]" src={logo} />
           </Link>
           <Search />
         </div>

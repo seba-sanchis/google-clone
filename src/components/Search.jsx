@@ -13,7 +13,7 @@ export const Search = () => {
   }, [debouncedValue]);
 
   return (
-    <div className="flex items-center w-[692px] h-[46px] rounded-[24px] shadow-[0_2px_5px_1px_rgba(64,60,67,0.16)]">
+    <div className="flex items-center w-[692px] h-[46px] rounded-[24px] ml-[10px] shadow-[0_2px_5px_1px_rgba(64,60,67,0.16)]">
       <input
         value={text}
         type="text"

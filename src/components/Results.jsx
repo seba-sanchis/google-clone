@@ -49,14 +49,14 @@ export const Results = () => {
   switch (location.pathname) {
     case "/search":
       return (
-        <div className="mt-[30px] ml-[230px]">
+        <div className="mt-[30px] ml-[180px]">
           {webPages?.value?.map(({ url, name, snippet }, index) => (
             <div key={index} className="mb-[30px]">
               <a href={url} target="_blank" rel="noreferrer">
                 <cite className="ml-[21px] pt-[1px] text-[14px] leading-[1.3] not-italic text-[#202124]">
                   {url.length > 30 ? url.substring(0, 30) : url}
                 </cite>
-                <h3 className="max-w-[600px] text-ellipsis overflow-x-hidden whitespace-nowrap text-[20px] leading-[1.3] font-normal text-[#1a0dab] pt-[5px]">
+                <h3 className="max-w-[600px] text-ellipsis overflow-hidden whitespace-nowrap text-[20px] leading-[1.3] font-normal text-[#1a0dab] pt-[5px]">
                   {name}
                 </h3>
                 <span className="flex max-w-[600px] text-[#4d5156] text-[14px] leading-[1.58] line-clamp-2">
@@ -84,7 +84,7 @@ export const Results = () => {
               >
                 <div className="group-hover:shadow-[0_2px_12px_0_rgba(0,0,0,0.3)] flex items-center justify-center h-[148px] rounded-[12px] overflow-hidden bg-[rgba(0,0,0,.03)]">
                   <img
-                    className="relative object-cover w-[100%]"
+                    className="object-cover w-[100%]"
                     src={thumbnailUrl}
                     alt={name}
                     loading="lazy"
@@ -94,7 +94,7 @@ export const Results = () => {
                   <div className="text-[#70757a] text-[12px] leading-[20px] tracking-[.2px] px-[4px]">
                     {hostPageDomainFriendlyName}
                   </div>
-                  <span className="text-[#3c4043] text-[12px] leading-[20px] tracking-[.2px] max-w-[230px] px-[4px]">
+                  <span className="text-[#3c4043] text-[12px] leading-[20px] tracking-[.2px] max-w-[180px] px-[4px]">
                     {name}
                   </span>
                 </div>
@@ -105,7 +105,7 @@ export const Results = () => {
       );
     case "/videos":
       return (
-        <div className="mt-[30px] ml-[230px] max-w-[600px]">
+        <div className="mt-[30px] ml-[180px] max-w-[600px]">
           {value?.map(
             (
               {
@@ -122,9 +122,11 @@ export const Results = () => {
                 <cite className="ml-[21px] pt-[1px] text-[14px] leading-[1.3] not-italic text-[#202124]">
                   {publisher?.[0]?.name}
                 </cite>
-                <h3 className="max-w-[600px] text-ellipsis overflow-x-hidden whitespace-nowrap text-[20px] leading-[1.3] font-normal text-[#1a0dab] pt-[5px]">
+                <a href={contentUrl}>
+                <h3 className="hover:underline max-w-[600px] text-ellipsis overflow-hidden whitespace-nowrap text-[20px] leading-[24px] font-normal text-[#1a0dab]">
                   {name}
                 </h3>
+                </a>
                 <div className="flex">
                   <span className="mt-[4px] mr-[16px]">
                     <ReactPlayer
@@ -143,8 +145,13 @@ export const Results = () => {
                       {description}
                     </span>
                     <div className="mt-[12px]">
-                      <span className="text-[14px] leading-[20px] text-[#3c4043]">{creator?.name}</span>{"  ·  "}
-                      <span className="text-[14px] leading-[20px] text-[#70757a]">{datePublished.substring(0, 10)}</span>
+                      <span className="text-[14px] leading-[20px] text-[#3c4043]">
+                        {creator?.name}
+                      </span>
+                      {"  ·  "}
+                      <span className="text-[14px] leading-[20px] text-[#70757a]">
+                        {datePublished.substring(0, 10)}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -155,17 +162,42 @@ export const Results = () => {
       );
     case "/news":
       return (
-        <div className="">
+        <div className="mt-[30px] ml-[180px]">
           {value?.map(
-            ({ provider, url, name, description, datePublished }, index) => (
-              <div key={index} className="">
-                <p>{provider?.[0]?.name}</p>
-                <a href={url} target="_blank" rel="noreferrer" className="">
-                  <p className="">{name}</p>
-                </a>
-                <p>{description}</p>
-                <div className="">{datePublished}</div>
-              </div>
+            (
+              { provider, url, name, description, datePublished, image },
+              index
+            ) => (
+              <a
+                key={index}
+                className="group flex mb-[30px]"
+                href={url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <div>
+                  <span className="ml-[21px] mb-[8px] text-[12px] leading-[16px] text-[#202124]">
+                    {provider?.[0]?.name}
+                  </span>
+                  <div>
+                    <div className="group-hover:underline max-w-[545px] overflow-hidden whitespace-normal text-[20px] leading-[24px] font-normal text-[#1a0dab] pt-[5px]">
+                      {name}
+                    </div>
+                  </div>
+                  <div className="flex max-w-[545px] text-[#4d5156] text-[14px] leading-[1.4] mt-[8px] line-clamp-2">
+                    {description}
+                  </div>
+                  <div className="text-[14px] leading-[16px] mt-[8px] text-[#70757a]">
+                    {datePublished.substring(0, 10)}
+                  </div>
+                </div>
+                <div className="flex w-[92px] h-[92px] rounded-[8px] bg-[#f8f9fa] ml-[16px] overflow-hidden">
+                  <img
+                    className="object-cover h-[100%]"
+                    src={image?.thumbnail?.contentUrl}
+                  />
+                </div>
+              </a>
             )
           )}
         </div>

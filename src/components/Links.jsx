@@ -49,15 +49,15 @@ const links = [
 
 export const Links = () => {
   return (
-    <div className="flex ml-[230px]">
+    <div className="flex ml-[170px]">
       {links.map(({ url, text, icon }, index) => (
         <NavLink
           to={url}
           key={index}
           className={({ isActive }) =>
             isActive
-              ? "flex items-center justify-center border-b-[3px] pt-[17px] pr-[12px] pb-[11px] pl-[10px] mt-[16px] text-sm text-[#1a73e8] dark:text-[#8ab4f8] fill-[#1a73e8] dark:fill-[#8ab4f8]"
-              : "flex items-center justify-center pt-[17px] pr-[12px] pb-[11px] pl-[10px] mt-[16px] text-sm text-[#5f6368] dark:text-[#969ba1] fill-[#5f6368] dark:fill-[#969ba1]"
+              ? "flex items-center justify-center border-b-[3px] pt-[17px] pr-[12px] pb-[11px] pl-[10px] mt-[10px] text-sm text-[#1a73e8] dark:text-[#8ab4f8] fill-[#1a73e8] dark:fill-[#8ab4f8]"
+              : "flex items-center justify-center pt-[17px] pr-[12px] pb-[11px] pl-[10px] mt-[10px] text-sm text-[#5f6368] dark:text-[#969ba1] fill-[#5f6368] dark:fill-[#969ba1]"
           }
         >
           {icon}
