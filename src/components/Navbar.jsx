@@ -12,7 +12,7 @@ export const Navbar = ({ darkTheme, setDarkTheme }) => {
       <div className="flex items-center justify-between pt-[26px]">
         <div className="flex items-center">
           <Link to="/">
-            <img className="pr-[28px] pl-[30px]" src={logo} />
+            <img className="pr-[28px] pl-[30px] ml-[60px]" src={logo} />
           </Link>
           <Search />
         </div>
@@ -33,7 +33,7 @@ export const Navbar = ({ darkTheme, setDarkTheme }) => {
                   <rect className="w-[24px] h-[24px]" x="0" y="0"></rect>
                 </clipPath>
               </defs>
-              <g clip-path="url(#__lottie_element_2)">
+              <g clipPath="url(#__lottie_element_2)">
                 <g transform="matrix(1,0,0,1,12,12)">
                   <g transform="matrix(1,0,0,1,0,0)">
                     <path
@@ -64,7 +64,7 @@ export const Navbar = ({ darkTheme, setDarkTheme }) => {
                   <rect className="w-[24px] h-[24px]" x="0" y="0"></rect>
                 </clipPath>
               </defs>
-              <g clip-path="url(#__lottie_element_2)">
+              <g clipPath="url(#__lottie_element_2)">
                 <g transform="matrix(1.5,0,0,1.5,7,12)">
                   <g transform="matrix(1,0,0,1,0,0)">
                     <path

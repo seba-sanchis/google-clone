@@ -13,11 +13,11 @@ export const Search = () => {
   }, [debouncedValue]);
 
   return (
-    <div className="flex items-center w-[692px] h-[44px] rounded-[24px] shadow-[0_2px_5px_1px_rgba(64,60,67,0.16)]">
+    <div className="flex items-center w-[692px] h-[46px] rounded-[24px] shadow-[0_2px_5px_1px_rgba(64,60,67,0.16)]">
       <input
         value={text}
         type="text"
-        className="w-full h-[39px] pt-[5px] pb-[3px] pl-[20px] bg-[transparent] outline-none"
+        className="w-full h-[39px] py-[5px] pl-[20px] bg-[transparent] outline-none text-[16px] leading-[39px] text-[rgba(0,0,0,.87)]"
         onChange={(e) => setText(e.target.value)}
       />
       {text && (

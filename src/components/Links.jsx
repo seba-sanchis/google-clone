@@ -49,7 +49,7 @@ const links = [
 
 export const Links = () => {
   return (
-    <div className="flex ml-[180px]">
+    <div className="flex ml-[230px]">
       {links.map(({ url, text, icon }, index) => (
         <NavLink
           to={url}
