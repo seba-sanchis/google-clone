@@ -59,7 +59,7 @@ export const Results = () => {
                 <h3 className="max-w-[600px] text-ellipsis overflow-x-hidden whitespace-nowrap text-[20px] leading-[1.3] font-normal text-[#1a0dab] pt-[5px]">
                   {name}
                 </h3>
-                <span className="flex max-w-[600px] text-[#4d5156] text-[14px] leading-[1.58] overflow-hidden line-clamp-2">
+                <span className="flex max-w-[600px] text-[#4d5156] text-[14px] leading-[1.58] line-clamp-2">
                   {snippet}
                 </span>
               </a>
@@ -105,7 +105,7 @@ export const Results = () => {
       );
     case "/videos":
       return (
-        <div className="">
+        <div className="mt-[30px] ml-[230px] max-w-[600px]">
           {value?.map(
             (
               {
@@ -118,19 +118,36 @@ export const Results = () => {
               },
               index
             ) => (
-              <div key={index} className="">
-                <p>{name}</p>
-                <ReactPlayer
-                  url={contentUrl}
-                  controls
-                  width="355px"
-                  height="200px"
-                />
-                <p>{description}</p>
-                <p>
-                  {creator?.name}
-                  {datePublished}
-                </p>
+              <div key={index} className="mb-[30px]">
+                <cite className="ml-[21px] pt-[1px] text-[14px] leading-[1.3] not-italic text-[#202124]">
+                  {publisher?.[0]?.name}
+                </cite>
+                <h3 className="max-w-[600px] text-ellipsis overflow-x-hidden whitespace-nowrap text-[20px] leading-[1.3] font-normal text-[#1a0dab] pt-[5px]">
+                  {name}
+                </h3>
+                <div className="flex">
+                  <span className="mt-[4px] mr-[16px]">
+                    <ReactPlayer
+                      url={contentUrl}
+                      config={{
+                        youtube: {
+                          playerVars: { showinfo: 1 },
+                        },
+                      }}
+                      width={"178px"}
+                      height={"100px"}
+                    />
+                  </span>
+                  <div className="flex flex-col">
+                    <span className="flex max-w-[406px] text-[#4d5156] text-[14px] leading-[22px] line-clamp-2">
+                      {description}
+                    </span>
+                    <div className="mt-[12px]">
+                      <span className="text-[14px] leading-[20px] text-[#3c4043]">{creator?.name}</span>{"  ·  "}
+                      <span className="text-[14px] leading-[20px] text-[#70757a]">{datePublished.substring(0, 10)}</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             )
           )}
