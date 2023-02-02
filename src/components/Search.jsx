@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDebounce } from "use-debounce";
 
 import { useResultContext } from "../contexts/ResultContextProvider";
 
-export const Search = () => {
-  const [text, setText] = useState("");
+export const Search = ({ text, setText }) => {
   const { setSearchTerm } = useResultContext();
   const [debouncedValue] = useDebounce(text, 300);
 
@@ -13,7 +12,7 @@ export const Search = () => {
   }, [debouncedValue]);
 
   return (
-    <div className="flex items-center w-[692px] h-[46px] rounded-[24px] ml-[10px] shadow-[0_2px_5px_1px_rgba(64,60,67,0.16)]">
+    <div className="flex items-center w-[692px] h-[46px] rounded-[24px] ml-[10px] bg-[#fff] shadow-[0_2px_5px_1px_rgba(64,60,67,0.16)] hover:shadow-[0_2px_8px_1px_rgba(64,60,67,0.24)] hover:border-[rgba(223,225,229,0)]">
       <input
         value={text}
         type="text"

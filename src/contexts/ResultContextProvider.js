@@ -7,21 +7,22 @@ export const ResultContextProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
-  // /search
+  // /search /images /videos /news
   const getResults = async (host, type) => {
     setIsLoading(true);
 
     const response = await fetch(`https://${host}${type}`, {
       method: "GET",
       headers: {
-        'X-BingApis-SDK': 'true',
-        'X-RapidAPI-Key': process.env.REACT_APP_API_ACCESS_KEY,
-        'X-RapidAPI-Host': host
+        "X-BingApis-SDK": "true",
+        "X-RapidAPI-Key": process.env.REACT_APP_API_ACCESS_KEY,
+        "X-RapidAPI-Host": host,
       },
     });
 
     const data = await response.json();
 
+    console.log(`https://${host}${type}`);
     console.log(data);
 
     setResults(data);

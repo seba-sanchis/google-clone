@@ -4,17 +4,17 @@ import { Link } from "react-router-dom";
 import { Search } from "./Search";
 import { Links } from "./Links";
 
-import logo from "../images/logo.jpg";
+import logo from "../images/logo-sm.png";
 
-export const Navbar = ({ darkTheme, setDarkTheme }) => {
+export const Navbar = ({ darkTheme, setDarkTheme, text, setText }) => {
   return (
     <div className="flex-col border-b border-solid border-[#ebebeb]">
       <div className="flex items-center justify-between pt-[26px]">
         <div className="flex items-center">
           <Link to="/">
-            <img className="pr-[28px] pl-[30px]" src={logo} />
+            <img className="pr-[28px] pl-[30px]" src={logo} alt="logo" />
           </Link>
-          <Search />
+          <Search text={text} setText={setText} />
         </div>
         <button
           type="button"
