@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import logo from "../images/logo-md.png";
+import logo from "../assets/logo-md.png";
 
 export const Home = ({ text, setText }) => {
   const navigate = useNavigate();

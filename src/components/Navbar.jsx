@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Search } from "./Search";
 import { Links } from "./Links";
 
-import logo from "../images/logo-sm.png";
+import logo from "../assets/logo-sm.png";
 
 export const Navbar = ({ darkTheme, setDarkTheme, text, setText }) => {
   return (
