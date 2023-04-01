@@ -32,6 +32,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 To learn more about this project, take a look at the following resources:
 
+- [RapidAPI](https://rapidapi.com/) - multi-cloud, customized hub to find, connect to, and share APIs.
 - [React](https://reactjs.org/) - open-source frontend JavaScript library for building user interfaces based on components.
 - [Tailwind CSS](https://tailwindcss.com/) - open source CSS framework that it does not provide a series of predefined classes for elements.
 
