@@ -16,7 +16,7 @@ export const Navbar = ({ darkTheme, setDarkTheme, text, setText }) => {
           </Link>
           <Search text={text} setText={setText} />
         </div>
-        <button
+        {/* <button
           type="button"
           onClick={() => setDarkTheme(!darkTheme)}
           className="flex items-center justify-center w-[40px] h-[40px] mr-[20px] rounded-[50%] hover:bg-[rgba(218,220,224,.5)] dark:hover:bg-[#3c4043]"
@@ -84,7 +84,7 @@ export const Navbar = ({ darkTheme, setDarkTheme, text, setText }) => {
               </g>
             </svg>
           )}
-        </button>
+        </button> */}
       </div>
       <Links />
     </div>

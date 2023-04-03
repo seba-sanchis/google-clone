@@ -50,7 +50,7 @@ export const Results = () => {
     case "/search":
       return (
         <div className="mt-[30px] ml-[180px]">
-          {webPages?.value?.map(({ url, name, snippet }, index) => (
+          {value?.map(({ url, name, description }, index) => (
             <div key={index} className="mb-[30px]">
               <a href={url} target="_blank" rel="noreferrer">
                 <cite className="ml-[21px] pt-[1px] text-[14px] leading-[1.3] not-italic text-[#202124]">
@@ -60,7 +60,7 @@ export const Results = () => {
                   {name}
                 </h3>
                 <span className="flex max-w-[600px] text-[#4d5156] text-[14px] leading-[1.58] line-clamp-2">
-                  {snippet}
+                  {description}
                 </span>
               </a>
             </div>
@@ -195,6 +195,7 @@ export const Results = () => {
                   <img
                     className="object-cover h-[100%]"
                     src={image?.thumbnail?.contentUrl}
+                    alt={name}
                   />
                 </div>
               </a>
