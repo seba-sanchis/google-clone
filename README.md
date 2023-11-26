@@ -1,4 +1,4 @@
-# Search Engine - designed to carry out web searches
+# Google Clone - designed to carry out web searches
 
 Search up-to-date results, images, videos and news fetching data from Bing Web Search using RapidAPI.
 
